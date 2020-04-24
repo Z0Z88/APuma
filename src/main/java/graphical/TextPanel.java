@@ -18,7 +18,7 @@ public class TextPanel extends JComponent {
         public Builder() {
         }
 
-        public Builder fontFamily(String fontFamilyName) {
+        public Builder setFontFamily(String fontFamilyName) {
             fontFamily = fontFamilyName;
             return this;
         }

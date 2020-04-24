@@ -11,7 +11,7 @@ public class TextPanelTest {
     @Test
     public void buildProperlyTest() {
         textPanel = new TextPanel.Builder()
-                .fontFamily("Dialog")
+                .setFontFamily("Dialog")
                 .setFontBackground(Color.BLUE)
                 .setFontColor(Color.CYAN)
                 .setFontSize(24)
