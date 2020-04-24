@@ -1,7 +1,9 @@
+import graphical.DrawPanel;
 import graphical.Frame;
 import graphical.TextPanel;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 
 public class APuMa {
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class APuMa {
         frame.initWindow();
         frame.createWindow();
         frame.getWindow().setResizable(true);
+        //Write in Window
         TextPanel textPanel = new TextPanel.Builder()
                 .setFontFamily("Dialog")
                 .setFontBackground(Color.BLUE)
@@ -22,7 +25,10 @@ public class APuMa {
                 .build();
         frame.getWindow().add(textPanel);
         textPanel.setDynamicText("X-X-X");
-
+        //Draw in Window
+        DrawPanel drawPanel = new DrawPanel.Builder().build();
+        drawPanel.addPrimitive(new Line2D.Double(10,10,90,90));
+        frame.getWindow().getContentPane().add(drawPanel);
         // TODO: A cég logo meghívása
         // TODO: A játék logo meghívása
         // TODO: Intro meghívása
