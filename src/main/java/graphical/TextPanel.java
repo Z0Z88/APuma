@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TextPanel extends JComponent {
+    private String dynamicText;
+
     public static class Builder {
         private String fontFamily;
         private Integer fontStyle;
@@ -77,4 +79,17 @@ public class TextPanel extends JComponent {
     private TextPanel() {
     }
 
+    public void setDynamicText (String newTextValue) {
+        dynamicText = newTextValue;
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+                RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g2d.drawString(dynamicText,30,30);
+    }
 }
